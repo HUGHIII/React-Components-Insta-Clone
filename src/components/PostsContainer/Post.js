@@ -9,8 +9,12 @@ import "./Posts.css";
 
 const Post = props => {
   // set up state for the likes
+const [likes, setLikes] = useState(props.postProp.likes);
+// console.log(props.postProp)
 
-  
+  const add1Like = event => {
+    setLikes(likes + 1);
+  };
 
   return (
     <div className="post-border">
@@ -27,7 +31,7 @@ const Post = props => {
           src={props.postProp.imageUrl}
         />
       </div>
-      <LikeSection />
+      <LikeSection originalLikes = {likes} addLikes = {add1Like} />
       <CommentSection
         postId={props.postProp.imageUrl}
         comments={props.postProp.comments}
