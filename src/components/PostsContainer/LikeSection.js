@@ -16,7 +16,7 @@ const LikeSection = props => {
     </div>
     <p className="like-number">
       {props.originalLikes}
-      likes</p>
+  {' '}likes</p>
 </div>
   )
 };
